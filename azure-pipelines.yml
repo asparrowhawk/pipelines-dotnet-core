@@ -14,10 +14,12 @@ variables:
 
 steps:
 - task: UseDotNet@2
+  displayName: '3.0.x SDK'
   inputs:
     version: '3.0.x'
 
 - task: UseDotNet@2
+  displayName: '2.2.x runtime'
   inputs:
     version: '2.2.x'
     packageType: runtime
@@ -38,6 +40,7 @@ steps:
     zipAfterPublish: True
 
 - task: AzureWebApp@1
+  displayName: 'Publish to Azure'
   inputs:
     azureSubscription: 'Visual Studio Premium with MSDN(1af677c5-c06b-4b6a-9362-76ad386346ad)'
     appType: 'webApp'
