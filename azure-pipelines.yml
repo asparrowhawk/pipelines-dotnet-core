@@ -36,3 +36,14 @@ steps:
     publishWebProjects: True
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Visual Studio Premium with MSDN(1af677c5-c06b-4b6a-9362-76ad386346ad)'
+    appType: 'webApp'
+    appName: 'sparrowhawk-pipelines-dotnet-core'
+    deployToSlotOrASE: true
+    resourceGroupName: 'webapp-deployments'
+    slotName: 'production'
+    package: '$(Build.ArtifactsDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
