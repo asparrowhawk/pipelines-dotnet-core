@@ -14,9 +14,9 @@ variables:
 
 steps:
 - task: UseDotNet@2
-  displayName: '3.1.x SDK'
+  displayName: '2.2.x SDK'
   inputs:
-    version: '3.1.x'
+    version: '2.2.x'
     includePreviewVersions: False
 
 - task: DotNetCoreCLI@2
