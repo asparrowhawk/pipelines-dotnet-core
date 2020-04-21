@@ -14,15 +14,10 @@ variables:
 
 steps:
 - task: UseDotNet@2
-  displayName: '3.0.x SDK'
+  displayName: '3.1.x SDK'
   inputs:
-    version: '3.0.x'
-
-- task: UseDotNet@2
-  displayName: '2.2.x runtime'
-  inputs:
-    version: '2.2.x'
-    packageType: runtime
+    version: '3.1.x'
+    includePreviewVersions: False
 
 - task: DotNetCoreCLI@2
   displayName: 'Build'
